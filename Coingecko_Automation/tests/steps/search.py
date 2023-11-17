@@ -21,5 +21,5 @@ def step_impl(context, coin):
 @then('page should display "{coin}" page')
 def step_impl(context, coin):
     context.coin_page = CoinPage(context.driver)
-    assert coin == context.coin_page.coin_name
+    assert coin == context.coin_page.coin_name.text
 
