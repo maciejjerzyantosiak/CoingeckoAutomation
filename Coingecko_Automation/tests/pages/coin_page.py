@@ -10,6 +10,6 @@ class CoinPage(BasePage):
     def coin_name(self):
         return WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(CoinPageLocators.COIN_TEXT),
-            "I'm feeling lucky button is not visible"
+            'Coin name is not visible'
         )
 
