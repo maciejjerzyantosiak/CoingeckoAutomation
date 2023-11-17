@@ -21,5 +21,7 @@ def step_impl(context, coin):
 @then('page should display "{coin}" page')
 def step_impl(context, coin):
     context.coin_page = CoinPage(context.driver)
-    assert coin == context.coin_page.coin_name.text
+    print(context.coin_page.url)
+    assert f'https://www.coingecko.com/en/coins/{coin.lower()}' == context.coin_page.url
+    #assert coin == context.coin_page.coin_name.text
 
