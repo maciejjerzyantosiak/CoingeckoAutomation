@@ -17,6 +17,5 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r Coingecko_Automation\requirements.txt
-          PYTHONPATH = Coingecko_Automation
       - name: Test with behave
         run: behave Coingecko_Automation\tests
