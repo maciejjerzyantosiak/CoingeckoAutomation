@@ -1,6 +1,12 @@
 Feature: Coingecko search bar
 
-  Scenario: Search for coins
-     Given I am on home page
-      When I search for Bitcoin
-      Then page should display Bitcoin page
+  Scenario Outline: Search for coins
+    Given I am on home page
+    When I search for "<coin>"
+    Then page should display "<coin>" page
+
+    Examples:
+      | coin     |
+      | Bitcoin  |
+      | Everest  |
+      | Ethereum |
