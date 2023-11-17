@@ -1,5 +1,5 @@
-from tests.pages.base_page import BasePage
-from tests.pages.locators import CoinPageLocators
+from Coingecko_Automation.tests.pages.base_page import BasePage
+from Coingecko_Automation.tests.pages.locators import CoinPageLocators
 
 
 class CoinPage(BasePage):

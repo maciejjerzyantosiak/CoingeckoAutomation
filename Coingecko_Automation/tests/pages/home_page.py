@@ -1,6 +1,6 @@
 from selenium.webdriver import Keys
-from tests.pages.base_page import BasePage
-from tests.pages.locators import HomePageLocators
+from Coingecko_Automation.tests.pages.base_page import BasePage
+from Coingecko_Automation.tests.pages.locators import HomePageLocators
 import time
 
 

@@ -15,6 +15,7 @@ jobs:
           python-version: '3.9'
       - name: Install dependencies
         run: |
+          setlocal
           python -m pip install --upgrade pip
           pip install -r Coingecko_Automation\requirements.txt
           PYTHONPATH = Coingecko_Automation
