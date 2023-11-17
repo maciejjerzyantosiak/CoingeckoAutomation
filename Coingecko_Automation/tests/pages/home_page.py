@@ -25,9 +25,13 @@ class HomePage(BasePage):
     def search(self, text):
         search_bar = self.search_bar
         search_bar.click()
+        time.sleep(10)
         search_input = self.search_input
+        time.sleep(10)
         search_input.clear()
+        time.sleep(10)
         search_input.send_keys(text)
+        time.sleep(10)
         time.sleep(1)
         search_input.send_keys(Keys.ENTER)
 
