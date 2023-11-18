@@ -4,8 +4,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from Coingecko_Automation.tests.pages.base_page import BasePage
-from Coingecko_Automation.tests.pages.locators import HomePageLocators
+from CoingeckoAutomation.tests.pages.base_page import BasePage
+from CoingeckoAutomation.tests.pages.locators import HomePageLocators
 import time
 
 

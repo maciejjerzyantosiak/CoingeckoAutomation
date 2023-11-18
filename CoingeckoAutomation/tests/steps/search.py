@@ -1,8 +1,8 @@
 from behave import *
 import time
-from Coingecko_Automation.tests.pages import coin_page
-from Coingecko_Automation.tests.pages.coin_page import CoinPage
-from Coingecko_Automation.tests.pages.home_page import HomePage
+from CoingeckoAutomation.tests.pages import coin_page
+from CoingeckoAutomation.tests.pages.coin_page import CoinPage
+from CoingeckoAutomation.tests.pages.home_page import HomePage
 
 
 @given('I am on home page')
