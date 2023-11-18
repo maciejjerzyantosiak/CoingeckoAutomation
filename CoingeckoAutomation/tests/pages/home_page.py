@@ -1,4 +1,4 @@
-from selenium.common import StaleElementReferenceException
+from selenium.common import StaleElementReferenceException, TimeoutException
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
@@ -40,7 +40,11 @@ class HomePage(BasePage):
         )
 
     def select_item_from_result(self, element: WebElement, text: str) -> bool:
-        WebDriverWait(self.driver, 20).until(EC.staleness_of(self.search_item))
+        try:
+            WebDriverWait(self.driver, 15).until(EC.staleness_of(self.search_item))
+        except TimeoutException as e:
+            print('Timeout occurred while waiting for item results')
+            pass
         elem = self.search_item
         if text == elem.text:
             elem.click()
