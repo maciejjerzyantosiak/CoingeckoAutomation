@@ -15,7 +15,6 @@ def step_impl(context):
 
 @when('I search for "{coin}"')
 def step_impl(context, coin):
-    time.sleep(10)
     context.home_page.search(coin)
 
 
