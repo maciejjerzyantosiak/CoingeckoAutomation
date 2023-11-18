@@ -9,8 +9,6 @@ def before_scenario(context, scenario):
     options.add_argument('headless')
     options.add_argument('--disable-gpu')
     options.add_argument('--disable-extensions')
-    options.add_argument('--ignore-certificate-errors')
-    options.add_argument('--allow-running-insecure-content')
     options.add_argument(f'user-agent={user_agent}')
     driver = webdriver.Chrome(options=options)
     #driver.maximize_window()
@@ -19,5 +17,4 @@ def before_scenario(context, scenario):
 
 
 def after_scenario(context, scenario):
-    sleep(10)
     context.driver.quit()
