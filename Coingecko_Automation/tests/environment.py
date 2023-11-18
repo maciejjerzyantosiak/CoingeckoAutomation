@@ -11,7 +11,6 @@ def before_scenario(context, scenario):
     options.add_argument('--disable-extensions')
     options.add_argument(f'user-agent={user_agent}')
     driver = webdriver.Chrome(options=options)
-    #driver.maximize_window()
     driver.get('https://www.coingecko.com/')
     context.driver = driver
 
