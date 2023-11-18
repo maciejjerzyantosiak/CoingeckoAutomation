@@ -6,7 +6,7 @@ Feature: Coingecko search bar
     Then page should display "<coin>" page
 
     Examples:
-      | coin     |
-      | Bitcoin  |
-      | Everest  |
-      | Ethereum |
+      | coin           |
+      | Bitcoin (BTC)  |
+      | Everest (ID)   |
+      | Ethereum (ETH) |

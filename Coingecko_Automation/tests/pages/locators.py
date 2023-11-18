@@ -4,7 +4,8 @@ from selenium.webdriver.common.by import By
 class HomePageLocators:
     SEARCH_INPUT = By.ID, 'search-input-field'
     SEARCH_BAR = By.ID, 'search-bar'
-    SEARCH_RESULTS = By.CSS_SELECTOR, 'li[class="tw-text-sm tw-font-medium tw-text-gray-700 dark:tw-text-white dark:tw-text-opacity-87"]'
+    SEARCH_ITEM = By.CSS_SELECTOR, 'span[class="tw-pr-3"]'
+    SEARCH_RESULTS = By.CSS_SELECTOR, 'ul[class="list-reset relevant-results"] > li'
 
 
 class CoinPageLocators:

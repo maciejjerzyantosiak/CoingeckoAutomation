@@ -21,6 +21,7 @@ def step_impl(context, coin):
 def step_impl(context, coin):
     context.coin_page = CoinPage(context.driver)
     print(context.coin_page.url)
+    coin = coin.lower().split(' ')[0]
     assert f'https://www.coingecko.com/en/coins/{coin.lower()}' == context.coin_page.url
-    assert coin == context.coin_page.coin_name.text
+    assert coin == context.coin_page.coin_name.text.lower()
 
