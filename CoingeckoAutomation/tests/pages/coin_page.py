@@ -1,7 +1,7 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from Coingecko_Automation.tests.pages.base_page import BasePage
-from Coingecko_Automation.tests.pages.locators import CoinPageLocators
+from CoingeckoAutomation.tests.pages.base_page import BasePage
+from CoingeckoAutomation.tests.pages.locators import CoinPageLocators
 
 
 class CoinPage(BasePage):
