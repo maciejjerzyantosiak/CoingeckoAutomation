@@ -40,7 +40,7 @@ class HomePage(BasePage):
         )
 
     def select_item_from_result(self, element: WebElement, text: str) -> bool:
-        WebDriverWait(self.driver, 10).until(EC.staleness_of(self.search_item))
+        WebDriverWait(self.driver, 20).until(EC.staleness_of(self.search_item))
         elem = self.search_item
         if text == elem.text:
             elem.click()
