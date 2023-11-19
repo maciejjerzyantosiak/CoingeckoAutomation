@@ -4,6 +4,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+
+from CoingeckoAutomation.tests.helpers.page_loader import get_visible_element, get_visible_elements, \
+    wait_until_not_stale
 from CoingeckoAutomation.tests.pages.base_page import BasePage
 from CoingeckoAutomation.tests.pages.locators import HomePageLocators
 import time
@@ -13,39 +16,22 @@ class HomePage(BasePage):
 
     @property
     def search_bar(self):
-        return WebDriverWait(self.driver, 10).until(
-            EC.visibility_of_element_located(HomePageLocators.SEARCH_BAR),
-            'Search bar is not visible'
-        )
+        return get_visible_element(self.driver, HomePageLocators.SEARCH_BAR)
 
     @property
     def search_input(self):
-        return WebDriverWait(self.driver, 10).until(
-            EC.visibility_of_element_located(HomePageLocators.SEARCH_INPUT),
-            'Search input is not visible'
-        )
+        return get_visible_element(self.driver, HomePageLocators.SEARCH_INPUT)
 
     @property
     def search_item(self):
-        return WebDriverWait(self.driver, 10).until(
-            EC.visibility_of_element_located(HomePageLocators.SEARCH_ITEM),
-            'Search item is not visible'
-        )
+        return get_visible_element(self.driver, HomePageLocators.SEARCH_ITEM)
 
     @property
     def search_result(self):
-        return WebDriverWait(self.driver, 10).until(
-            EC.visibility_of_all_elements_located(HomePageLocators.SEARCH_RESULTS),
-            'Search results are not visible'
-        )
+        return get_visible_elements(self.driver, HomePageLocators.SEARCH_RESULTS)
 
     def select_item_from_result(self, element: WebElement, text: str) -> bool:
-        try:
-            WebDriverWait(self.driver, 15).until(EC.staleness_of(self.search_item))
-        except TimeoutException as e:
-            print('Timeout occurred while waiting for item results')
-            pass
-        elem = self.search_item
+        elem = element.find_element(*HomePageLocators.SEARCH_ITEM)
         if text == elem.text:
             elem.click()
             return True
@@ -59,6 +45,7 @@ class HomePage(BasePage):
         search_input.clear()
         search_input.send_keys(text)
 
+        wait_until_not_stale(self.driver, HomePageLocators.SEARCH_ITEM)
         elements = self.search_result
         for elem in elements:
             if self.select_item_from_result(elem, text):
