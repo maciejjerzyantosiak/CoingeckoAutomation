@@ -8,6 +8,8 @@ from CoingeckoAutomation.tests.pages.home_page import HomePage
 @given('I am on home page')
 def step_impl(context):
     context.home_page = HomePage(context.driver)
+
+    print('Starting')
     assert 'https://www.coingecko.com/' == context.home_page.url
     assert 'Cryptocurrency Prices, Charts, and Crypto Market Cap | CoinGecko' == context.home_page.title
 
