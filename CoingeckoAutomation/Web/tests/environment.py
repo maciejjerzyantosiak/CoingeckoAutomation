@@ -1,6 +1,6 @@
 from selenium import webdriver
-from time import sleep
 from selenium.webdriver.chrome.options import Options
+
 
 def before_scenario(context, scenario):
     options = Options()
