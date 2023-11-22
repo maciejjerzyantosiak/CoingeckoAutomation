@@ -1,15 +1,9 @@
-from selenium.common import StaleElementReferenceException, TimeoutException
-from selenium.webdriver import Keys
-from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 
-from CoingeckoAutomation.tests.helpers.page_loader import get_visible_element, get_visible_elements, \
+from CoingeckoAutomation.Web.tests.helpers.page_loader import get_visible_element, get_visible_elements, \
     wait_until_not_stale
-from CoingeckoAutomation.tests.pages.base_page import BasePage
-from CoingeckoAutomation.tests.pages.locators import HomePageLocators
-import time
+from CoingeckoAutomation.Web.tests.pages.base_page import BasePage
+from CoingeckoAutomation.Web.tests.pages.locators import HomePageLocators
 
 
 class HomePage(BasePage):
